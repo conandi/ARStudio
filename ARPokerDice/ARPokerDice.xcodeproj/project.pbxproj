@@ -13,6 +13,10 @@
 		2336B62F214387CA001D5628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2336B62E214387CA001D5628 /* Assets.xcassets */; };
 		2336B632214387CA001D5628 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2336B630214387CA001D5628 /* LaunchScreen.storyboard */; };
 		2336B63A21438FB1001D5628 /* PokerDice.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2336B63921438FB1001D5628 /* PokerDice.scnassets */; };
+		23E844A92147A0B1001520ED /* GameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E844A52147A0B1001520ED /* GameUtils.swift */; };
+		23E844AA2147A0B1001520ED /* SCNVector3+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E844A62147A0B1001520ED /* SCNVector3+Extension.swift */; };
+		23E844AB2147A0B1001520ED /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E844A72147A0B1001520ED /* Generics.swift */; };
+		23E844AC2147A0B1001520ED /* Random+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E844A82147A0B1001520ED /* Random+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		2336B631214387CA001D5628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2336B633214387CA001D5628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2336B63921438FB1001D5628 /* PokerDice.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = PokerDice.scnassets; sourceTree = "<group>"; };
+		23E844A52147A0B1001520ED /* GameUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUtils.swift; sourceTree = "<group>"; };
+		23E844A62147A0B1001520ED /* SCNVector3+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extension.swift"; sourceTree = "<group>"; };
+		23E844A72147A0B1001520ED /* Generics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
+		23E844A82147A0B1001520ED /* Random+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Random+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +64,9 @@
 		2336B624214387C9001D5628 /* ARPokerDice */ = {
 			isa = PBXGroup;
 			children = (
-				2336B625214387C9001D5628 /* AppDelegate.swift */,
+				23E844A42147A0B1001520ED /* GameUtils */,
 				2336B63921438FB1001D5628 /* PokerDice.scnassets */,
+				2336B625214387C9001D5628 /* AppDelegate.swift */,
 				2336B629214387C9001D5628 /* ViewController.swift */,
 				2336B62B214387C9001D5628 /* Main.storyboard */,
 				2336B62E214387CA001D5628 /* Assets.xcassets */,
@@ -65,6 +74,17 @@
 				2336B633214387CA001D5628 /* Info.plist */,
 			);
 			path = ARPokerDice;
+			sourceTree = "<group>";
+		};
+		23E844A42147A0B1001520ED /* GameUtils */ = {
+			isa = PBXGroup;
+			children = (
+				23E844A52147A0B1001520ED /* GameUtils.swift */,
+				23E844A62147A0B1001520ED /* SCNVector3+Extension.swift */,
+				23E844A72147A0B1001520ED /* Generics.swift */,
+				23E844A82147A0B1001520ED /* Random+Extension.swift */,
+			);
+			path = GameUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2336B62A214387C9001D5628 /* ViewController.swift in Sources */,
+				23E844A92147A0B1001520ED /* GameUtils.swift in Sources */,
+				23E844AB2147A0B1001520ED /* Generics.swift in Sources */,
 				2336B626214387C9001D5628 /* AppDelegate.swift in Sources */,
+				23E844AC2147A0B1001520ED /* Random+Extension.swift in Sources */,
+				23E844AA2147A0B1001520ED /* SCNVector3+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
