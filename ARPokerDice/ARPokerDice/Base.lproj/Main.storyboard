@@ -20,6 +20,10 @@
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIk-7J-5ox">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ssr-SR-OGo" appends="YES" id="wPU-P1-Tfl"/>
+                                </connections>
                             </arscnView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Emr-4V-7km">
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
@@ -124,6 +128,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="Ssr-SR-OGo">
+                    <connections>
+                        <action selector="swipeUPGestureHandler:" destination="BV1-FR-VrT" id="biE-p0-Xr1"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="29.23538230884558"/>
         </scene>
