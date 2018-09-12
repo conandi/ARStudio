@@ -194,6 +194,10 @@ class ViewController: UIViewController {
             self.gameState = .pointToSurface
         }
     }
+    
+    func removeARPlaneNode(node: SCNNode) {
+        
+    }
 }
 
 extension ViewController: ARSCNViewDelegate {
@@ -256,6 +260,13 @@ extension ViewController: ARSCNViewDelegate {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         DispatchQueue.main.async {
             self.updateARPlaneNode(planeNode: node.childNodes[0], planeAchor: planeAnchor)
+        }
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        DispatchQueue.main.async {
+            self.removeARPlaneNode(node: node.childNodes[0])
         }
     }
 }
