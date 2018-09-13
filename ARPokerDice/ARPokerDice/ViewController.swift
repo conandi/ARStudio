@@ -104,6 +104,8 @@ class ViewController: UIViewController {
         sceneView.scene = scene
         scene.lightingEnvironment.contents = "PokerDice.scnassets/Textures/Environment_CUBE.jpg"
         scene.lightingEnvironment.intensity = 2
+        scene.physicsWorld.speed = 0.05
+        scene.physicsWorld.timeStep = 1.0 / 60.0
     }
     
     func initARSession() {
@@ -151,14 +153,25 @@ class ViewController: UIViewController {
     // MARK: - Helper Functions
     
     func throwDiceNode(transform: SCNMatrix4, offset: SCNVector3) {
+        let distance = simd_distance(focusNode.simdPosition, simd_make_float3(transform.m41,
+                                                                              transform.m42,
+                                                                              transform.m43))
+        let direction = SCNVector3(-(distance*2.5) * transform.m31,
+                                   -(distance*2.5) * (transform.m32 - Float.pi/4),
+                                   -(distance*2.5) * (transform.m33))
+        
+        let rotation = SCNVector3(Double.random(min: 0, max: Double.pi),
+                                  Double.random(min: 0, max: Double.pi),
+                                  Double.random(min: 0, max: Double.pi))
         let position = SCNVector3(transform.m41 + offset.x,
                                   transform.m42 + offset.y,
                                   transform.m43 + offset.z)
         let diceNode = diceNodes[diceStyle].clone()
         diceNode.name = "dice"
         diceNode.position = position
+        diceNode.eulerAngles = rotation
         sceneView.scene.rootNode.addChildNode(diceNode)
-//        diceCount -= 1
+        diceCount -= 1
     }
     
     func createARPlaneNode(planeAnchor: ARPlaneAnchor, color: UIColor) -> SCNNode {
@@ -170,6 +183,7 @@ class ViewController: UIViewController {
         let planeNode = SCNNode(geometry: planeGeometry)
         planeNode.position = SCNVector3Make(planeAnchor.center.x, 0, planeAnchor.center.z)
         planeNode.transform = SCNMatrix4MakeRotation(-Float.pi/2, 1, 0, 0)
+        planeNode.physicsBody = createARPlanePhysics(geometry: planeGeometry)
         return planeNode
     }
     
@@ -178,6 +192,8 @@ class ViewController: UIViewController {
         planeGeometry.width = CGFloat(planeAchor.extent.x)
         planeGeometry.height = CGFloat(planeAchor.extent.z)
         planeNode.position = SCNVector3Make(planeAchor.center.x, 0, planeAchor.center.z)
+        planeNode.physicsBody = nil
+        planeNode.physicsBody = createARPlanePhysics(geometry: planeGeometry)
     }
     
     func updateFocusNode() {
@@ -200,6 +216,24 @@ class ViewController: UIViewController {
             childNode.removeFromParentNode()
         }
     }
+    
+    func updateDiceNodes() {
+        for node in sceneView.scene.rootNode.childNodes {
+            if node.name == "dice" {
+                if node.presentation.position.y < -2 {
+                    node.removeFromParentNode()
+                    diceCount += 1
+                }
+            }
+        }
+    }
+    
+    func createARPlanePhysics(geometry: SCNGeometry) -> SCNPhysicsBody {
+        let physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(geometry: geometry, options: nil))
+        physicsBody.restitution = 0.5
+        physicsBody.friction = 0.5
+        return physicsBody
+    }
 }
 
 extension ViewController: ARSCNViewDelegate {
@@ -209,6 +243,7 @@ extension ViewController: ARSCNViewDelegate {
         DispatchQueue.main.async {
             self.updateStatus()
             self.updateFocusNode()
+            self.updateDiceNodes()
         }
     }
     
