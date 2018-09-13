@@ -196,7 +196,9 @@ class ViewController: UIViewController {
     }
     
     func removeARPlaneNode(node: SCNNode) {
-        
+        for childNode in node.childNodes {
+            childNode.removeFromParentNode()
+        }
     }
 }
 
@@ -264,7 +266,7 @@ extension ViewController: ARSCNViewDelegate {
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
-        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        guard anchor is ARPlaneAnchor else { return }
         DispatchQueue.main.async {
             self.removeARPlaneNode(node: node.childNodes[0])
         }
