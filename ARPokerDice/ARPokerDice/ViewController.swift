@@ -124,25 +124,34 @@ class ViewController: UIViewController {
     
     // MARK: - Button action
     @IBAction func startButtonPressed(_ sender: Any) {
-        DispatchQueue.main.async {
-            self.startButton.isHidden = true
-            self.suspendARPlaneDetection()
-            self.hideARPlaneNodes()
-            self.gameState = .pointToSurface
-        }
+        self.startGame()
     }
     @IBAction func styleButtonPressed(_ sender: Any) {
         diceStyle = diceStyle >= 4 ? 0 : diceStyle + 1
     }
     @IBAction func resetButtonPressed(_ sender: Any) {
+        self.resetGame()
     }
     
     @IBAction func swipeUPGestureHandler(_ sender: Any) {
         guard gameState == .swipeToPlay else { return }
-        guard let frame  = self.sceneView.session.currentFrame else { return }
+        guard let frame = self.sceneView.session.currentFrame else { return }
         
         for count in 0 ..< diceCount {
             throwDiceNode(transform: SCNMatrix4(frame.camera.transform), offset: diceOffset[count])
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        DispatchQueue.main.async {
+            if let touchLocation = touches.first?.location(in: self.sceneView) {
+                if let hit = self.sceneView.hitTest(touchLocation, options: nil).first {
+                    if hit.node.name == "dice" {
+                        hit.node.removeFromParentNode()
+                        self.diceCount += 1
+                    }
+                }
+            }
         }
     }
     
@@ -262,6 +271,29 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func startGame() {
+        DispatchQueue.main.async {
+            self.startButton.isHidden = true
+            self.suspendARPlaneDetection()
+            self.hideARPlaneNodes()
+            self.gameState = .pointToSurface
+        }
+    }
+    
+    func resetARSession() {
+        let config = sceneView.session.configuration as! ARWorldTrackingConfiguration
+        config.planeDetection = .horizontal
+        sceneView.session.run(config, options: [.resetTracking, .removeExistingAnchors])
+    }
+    
+    func resetGame() {
+        DispatchQueue.main.async {
+            self.startButton.isHidden = false
+            self.resetARSession()
+            self.gameState = .detectSurface
+        }
+    }
 }
 
 extension ViewController: ARSCNViewDelegate {
@@ -308,6 +340,7 @@ extension ViewController: ARSCNViewDelegate {
     
     func sessionInterruptionEnded(_ session: ARSession) {
         trackingStatus = "AR Session Interruption Ended"
+        self.resetGame()
     }
     
     // MARK: - Plane Mangement
@@ -331,7 +364,7 @@ extension ViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
         guard anchor is ARPlaneAnchor else { return }
         DispatchQueue.main.async {
-            self.removeARPlaneNode(node: node.childNodes[0])
+            self.removeARPlaneNode(node: node)
         }
     }
 }
