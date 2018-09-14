@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     var gameState: GameState = .detectSurface
     var statusMessage: String = ""
     var focusPoint: CGPoint!
-    
+    var lightNode: SCNNode!
     // MARK: -Outlets
     
     @IBOutlet var sceneView: ARSCNView!
@@ -104,7 +104,7 @@ class ViewController: UIViewController {
         sceneView.scene = scene
         scene.lightingEnvironment.contents = "PokerDice.scnassets/Textures/Environment_CUBE.jpg"
         scene.lightingEnvironment.intensity = 2
-        scene.physicsWorld.speed = 0.05
+        scene.physicsWorld.speed = 1.0
         scene.physicsWorld.timeStep = 1.0 / 60.0
     }
     
@@ -118,12 +118,18 @@ class ViewController: UIViewController {
         config.worldAlignment = .gravity
         config.providesAudioData = false
         config.planeDetection = .horizontal
+        config.isLightEstimationEnabled = true
         sceneView.session.run(config)
     }
     
     // MARK: - Button action
     @IBAction func startButtonPressed(_ sender: Any) {
-        
+        DispatchQueue.main.async {
+            self.startButton.isHidden = true
+            self.suspendARPlaneDetection()
+            self.hideARPlaneNodes()
+            self.gameState = .pointToSurface
+        }
     }
     @IBAction func styleButtonPressed(_ sender: Any) {
         diceStyle = diceStyle >= 4 ? 0 : diceStyle + 1
@@ -132,6 +138,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func swipeUPGestureHandler(_ sender: Any) {
+        guard gameState == .swipeToPlay else { return }
         guard let frame  = self.sceneView.session.currentFrame else { return }
         
         for count in 0 ..< diceCount {
@@ -148,6 +155,8 @@ class ViewController: UIViewController {
         let focuScene = SCNScene(named: "PokerDice.scnassets/Models/FocusScene.scn")!
         focusNode = focuScene.rootNode.childNode(withName: "focus", recursively: false)!
         sceneView.scene.rootNode.addChildNode(focusNode)
+        lightNode = diceScene.rootNode.childNode(withName: "directional", recursively: false)!
+        sceneView.scene.rootNode.addChildNode(lightNode)
     }
     
     // MARK: - Helper Functions
@@ -170,6 +179,8 @@ class ViewController: UIViewController {
         diceNode.name = "dice"
         diceNode.position = position
         diceNode.eulerAngles = rotation
+        diceNode.physicsBody?.resetTransform()
+        diceNode.physicsBody?.applyForce(direction, asImpulse: true)
         sceneView.scene.rootNode.addChildNode(diceNode)
         diceCount -= 1
     }
@@ -233,6 +244,23 @@ class ViewController: UIViewController {
         physicsBody.restitution = 0.5
         physicsBody.friction = 0.5
         return physicsBody
+    }
+    
+    func suspendARPlaneDetection() {
+        let config = sceneView.session.configuration as! ARWorldTrackingConfiguration
+        config.planeDetection = []
+        sceneView.session.run(config)
+    }
+    
+    func hideARPlaneNodes() {
+        for anchor in (self.sceneView.session.currentFrame?.anchors)! {
+            if let node = self.sceneView.node(for: anchor) {
+                for child in node.childNodes {
+                    let material = child.geometry?.materials.first!
+                    material?.colorBufferWriteMask = []
+                }
+            }
+        }
     }
 }
 
