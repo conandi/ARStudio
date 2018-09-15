@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Portal View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="PortalViewController" customModule="Portal_V" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iVu-sa-csh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAv-bt-DCm" userLabel="sceneView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdQ-4T-EAU" userLabel="Message Label">
+                                <rect key="frame" x="38" y="40" width="299" height="109"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="0.40999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="Rcp-S8-JlJ"/>
+                                    <constraint firstAttribute="width" constant="299" id="WBe-E6-wVI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Interruption Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDr-PS-H6F" userLabel="Session State Label">
+                                <rect key="frame" x="66" y="585" width="244" height="62"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="0.40999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="cfo-ph-kvt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZAv-bt-DCm" firstAttribute="bottom" secondItem="GcC-aJ-QmH" secondAttribute="bottom" id="1Ed-pf-3FV"/>
+                            <constraint firstItem="ZAv-bt-DCm" firstAttribute="centerX" secondItem="iVu-sa-csh" secondAttribute="centerX" id="ARv-ur-ZDt"/>
+                            <constraint firstItem="ZAv-bt-DCm" firstAttribute="top" secondItem="iVu-sa-csh" secondAttribute="top" id="AxR-Sc-Fhz"/>
+                            <constraint firstItem="ZAv-bt-DCm" firstAttribute="trailing" secondItem="GcC-aJ-QmH" secondAttribute="trailing" id="F14-Bt-caz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="vdQ-4T-EAU" secondAttribute="bottom" constant="518" id="MIb-by-vBs"/>
+                            <constraint firstItem="GcC-aJ-QmH" firstAttribute="trailing" secondItem="vdQ-4T-EAU" secondAttribute="trailing" constant="38" id="SK1-Jj-tdZ"/>
+                            <constraint firstItem="xDr-PS-H6F" firstAttribute="top" secondItem="vdQ-4T-EAU" secondAttribute="bottom" constant="436" id="bZT-CH-PXA"/>
+                            <constraint firstItem="vdQ-4T-EAU" firstAttribute="top" secondItem="GcC-aJ-QmH" secondAttribute="top" constant="20" id="dRX-ou-PRH"/>
+                            <constraint firstItem="vdQ-4T-EAU" firstAttribute="leading" secondItem="GcC-aJ-QmH" secondAttribute="leading" constant="38" id="mus-w9-6AD"/>
+                            <constraint firstItem="xDr-PS-H6F" firstAttribute="centerX" secondItem="iVu-sa-csh" secondAttribute="centerX" id="qjT-6c-eWJ"/>
+                            <constraint firstItem="GcC-aJ-QmH" firstAttribute="bottom" secondItem="xDr-PS-H6F" secondAttribute="bottom" constant="20" id="wVP-1X-kQ4"/>
+                            <constraint firstItem="ZAv-bt-DCm" firstAttribute="leading" secondItem="GcC-aJ-QmH" secondAttribute="leading" id="xAM-6G-mMh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GcC-aJ-QmH"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="vdQ-4T-EAU" id="5l5-6g-acA"/>
+                        <outlet property="sceneView" destination="ZAv-bt-DCm" id="l9z-gZ-tw3"/>
+                        <outlet property="sessionStateLabel" destination="xDr-PS-H6F" id="xCU-Wp-naj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>

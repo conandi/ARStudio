@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2336B626214387C9001D5628 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2336B625214387C9001D5628 /* AppDelegate.swift */; };
-		2336B62A214387C9001D5628 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2336B629214387C9001D5628 /* ViewController.swift */; };
-		2336B62D214387C9001D5628 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2336B62B214387C9001D5628 /* Main.storyboard */; };
-		2336B62F214387CA001D5628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2336B62E214387CA001D5628 /* Assets.xcassets */; };
-		2336B632214387CA001D5628 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2336B630214387CA001D5628 /* LaunchScreen.storyboard */; };
-		2336B63A21438FB1001D5628 /* PokerDice.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2336B63921438FB1001D5628 /* PokerDice.scnassets */; };
-		23E844A92147A0B1001520ED /* GameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E844A52147A0B1001520ED /* GameUtils.swift */; };
-		23E844AA2147A0B1001520ED /* SCNVector3+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E844A62147A0B1001520ED /* SCNVector3+Extension.swift */; };
-		23E844AB2147A0B1001520ED /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E844A72147A0B1001520ED /* Generics.swift */; };
-		23E844AC2147A0B1001520ED /* Random+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E844A82147A0B1001520ED /* Random+Extension.swift */; };
+		D0EE948F214C6A61003C9F94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE948E214C6A61003C9F94 /* AppDelegate.swift */; };
+		D0EE9491214C6A61003C9F94 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D0EE9490214C6A61003C9F94 /* art.scnassets */; };
+		D0EE9493214C6A61003C9F94 /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE9492214C6A61003C9F94 /* PortalViewController.swift */; };
+		D0EE9496214C6A61003C9F94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EE9494214C6A61003C9F94 /* Main.storyboard */; };
+		D0EE9498214C6A63003C9F94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0EE9497214C6A63003C9F94 /* Assets.xcassets */; };
+		D0EE949B214C6A63003C9F94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EE9499214C6A63003C9F94 /* LaunchScreen.storyboard */; };
+		D0EE94C2214CA3FC003C9F94 /* FloatingPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE94BE214CA3FC003C9F94 /* FloatingPointExtension.swift */; };
+		D0EE94C3214CA3FC003C9F94 /* RWLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE94BF214CA3FC003C9F94 /* RWLabel.swift */; };
+		D0EE94C4214CA3FC003C9F94 /* SCNNodeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE94C0214CA3FC003C9F94 /* SCNNodeHelpers.swift */; };
+		D0EE94C5214CA3FC003C9F94 /* SCNVector3Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE94C1214CA3FC003C9F94 /* SCNVector3Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2336B622214387C9001D5628 /* ARPokerDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARPokerDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2336B625214387C9001D5628 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2336B629214387C9001D5628 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2336B62C214387C9001D5628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2336B62E214387CA001D5628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2336B631214387CA001D5628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2336B633214387CA001D5628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2336B63921438FB1001D5628 /* PokerDice.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = PokerDice.scnassets; sourceTree = "<group>"; };
-		23E844A52147A0B1001520ED /* GameUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUtils.swift; sourceTree = "<group>"; };
-		23E844A62147A0B1001520ED /* SCNVector3+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extension.swift"; sourceTree = "<group>"; };
-		23E844A72147A0B1001520ED /* Generics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
-		23E844A82147A0B1001520ED /* Random+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Random+Extension.swift"; sourceTree = "<group>"; };
+		D0EE948B214C6A61003C9F94 /* Portal_V.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portal_V.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EE948E214C6A61003C9F94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0EE9490214C6A61003C9F94 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		D0EE9492214C6A61003C9F94 /* PortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewController.swift; sourceTree = "<group>"; };
+		D0EE9495214C6A61003C9F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0EE9497214C6A63003C9F94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0EE949A214C6A63003C9F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0EE949C214C6A63003C9F94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0EE94BE214CA3FC003C9F94 /* FloatingPointExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointExtension.swift; sourceTree = "<group>"; };
+		D0EE94BF214CA3FC003C9F94 /* RWLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWLabel.swift; sourceTree = "<group>"; };
+		D0EE94C0214CA3FC003C9F94 /* SCNNodeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNNodeHelpers.swift; sourceTree = "<group>"; };
+		D0EE94C1214CA3FC003C9F94 /* SCNVector3Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector3Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2336B61F214387C9001D5628 /* Frameworks */ = {
+		D0EE9488214C6A61003C9F94 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,84 +45,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2336B619214387C9001D5628 = {
+		D0EE9482214C6A61003C9F94 = {
 			isa = PBXGroup;
 			children = (
-				2336B624214387C9001D5628 /* ARPokerDice */,
-				2336B623214387C9001D5628 /* Products */,
+				D0EE948D214C6A61003C9F94 /* Portal_V */,
+				D0EE948C214C6A61003C9F94 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2336B623214387C9001D5628 /* Products */ = {
+		D0EE948C214C6A61003C9F94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2336B622214387C9001D5628 /* ARPokerDice.app */,
+				D0EE948B214C6A61003C9F94 /* Portal_V.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2336B624214387C9001D5628 /* ARPokerDice */ = {
+		D0EE948D214C6A61003C9F94 /* Portal_V */ = {
 			isa = PBXGroup;
 			children = (
-				23E844A42147A0B1001520ED /* GameUtils */,
-				2336B63921438FB1001D5628 /* PokerDice.scnassets */,
-				2336B625214387C9001D5628 /* AppDelegate.swift */,
-				2336B629214387C9001D5628 /* ViewController.swift */,
-				2336B62B214387C9001D5628 /* Main.storyboard */,
-				2336B62E214387CA001D5628 /* Assets.xcassets */,
-				2336B630214387CA001D5628 /* LaunchScreen.storyboard */,
-				2336B633214387CA001D5628 /* Info.plist */,
+				D0EE94BD214CA3FC003C9F94 /* Helpers */,
+				D0EE948E214C6A61003C9F94 /* AppDelegate.swift */,
+				D0EE9492214C6A61003C9F94 /* PortalViewController.swift */,
+				D0EE9494214C6A61003C9F94 /* Main.storyboard */,
+				D0EE9490214C6A61003C9F94 /* art.scnassets */,
+				D0EE9497214C6A63003C9F94 /* Assets.xcassets */,
+				D0EE9499214C6A63003C9F94 /* LaunchScreen.storyboard */,
+				D0EE949C214C6A63003C9F94 /* Info.plist */,
 			);
-			path = ARPokerDice;
+			path = Portal_V;
 			sourceTree = "<group>";
 		};
-		23E844A42147A0B1001520ED /* GameUtils */ = {
+		D0EE94BD214CA3FC003C9F94 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				23E844A52147A0B1001520ED /* GameUtils.swift */,
-				23E844A62147A0B1001520ED /* SCNVector3+Extension.swift */,
-				23E844A72147A0B1001520ED /* Generics.swift */,
-				23E844A82147A0B1001520ED /* Random+Extension.swift */,
+				D0EE94BE214CA3FC003C9F94 /* FloatingPointExtension.swift */,
+				D0EE94BF214CA3FC003C9F94 /* RWLabel.swift */,
+				D0EE94C0214CA3FC003C9F94 /* SCNNodeHelpers.swift */,
+				D0EE94C1214CA3FC003C9F94 /* SCNVector3Extension.swift */,
 			);
-			path = GameUtils;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2336B621214387C9001D5628 /* ARPokerDice */ = {
+		D0EE948A214C6A61003C9F94 /* Portal_V */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2336B636214387CA001D5628 /* Build configuration list for PBXNativeTarget "ARPokerDice" */;
+			buildConfigurationList = D0EE949F214C6A63003C9F94 /* Build configuration list for PBXNativeTarget "Portal_V" */;
 			buildPhases = (
-				2336B61E214387C9001D5628 /* Sources */,
-				2336B61F214387C9001D5628 /* Frameworks */,
-				2336B620214387C9001D5628 /* Resources */,
+				D0EE9487214C6A61003C9F94 /* Sources */,
+				D0EE9488214C6A61003C9F94 /* Frameworks */,
+				D0EE9489214C6A61003C9F94 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ARPokerDice;
-			productName = ARPokerDice;
-			productReference = 2336B622214387C9001D5628 /* ARPokerDice.app */;
+			name = Portal_V;
+			productName = Portal_V;
+			productReference = D0EE948B214C6A61003C9F94 /* Portal_V.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2336B61A214387C9001D5628 /* Project object */ = {
+		D0EE9483214C6A61003C9F94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = conandi;
+				ORGANIZATIONNAME = "DI, JIAJIA";
 				TargetAttributes = {
-					2336B621214387C9001D5628 = {
+					D0EE948A214C6A61003C9F94 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 2336B61D214387C9001D5628 /* Build configuration list for PBXProject "ARPokerDice" */;
+			buildConfigurationList = D0EE9486214C6A61003C9F94 /* Build configuration list for PBXProject "Portal_V" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -130,59 +130,59 @@
 				en,
 				Base,
 			);
-			mainGroup = 2336B619214387C9001D5628;
-			productRefGroup = 2336B623214387C9001D5628 /* Products */;
+			mainGroup = D0EE9482214C6A61003C9F94;
+			productRefGroup = D0EE948C214C6A61003C9F94 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2336B621214387C9001D5628 /* ARPokerDice */,
+				D0EE948A214C6A61003C9F94 /* Portal_V */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2336B620214387C9001D5628 /* Resources */ = {
+		D0EE9489214C6A61003C9F94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2336B63A21438FB1001D5628 /* PokerDice.scnassets in Resources */,
-				2336B632214387CA001D5628 /* LaunchScreen.storyboard in Resources */,
-				2336B62F214387CA001D5628 /* Assets.xcassets in Resources */,
-				2336B62D214387C9001D5628 /* Main.storyboard in Resources */,
+				D0EE9491214C6A61003C9F94 /* art.scnassets in Resources */,
+				D0EE949B214C6A63003C9F94 /* LaunchScreen.storyboard in Resources */,
+				D0EE9498214C6A63003C9F94 /* Assets.xcassets in Resources */,
+				D0EE9496214C6A61003C9F94 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2336B61E214387C9001D5628 /* Sources */ = {
+		D0EE9487214C6A61003C9F94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2336B62A214387C9001D5628 /* ViewController.swift in Sources */,
-				23E844A92147A0B1001520ED /* GameUtils.swift in Sources */,
-				23E844AB2147A0B1001520ED /* Generics.swift in Sources */,
-				2336B626214387C9001D5628 /* AppDelegate.swift in Sources */,
-				23E844AC2147A0B1001520ED /* Random+Extension.swift in Sources */,
-				23E844AA2147A0B1001520ED /* SCNVector3+Extension.swift in Sources */,
+				D0EE9493214C6A61003C9F94 /* PortalViewController.swift in Sources */,
+				D0EE94C5214CA3FC003C9F94 /* SCNVector3Extension.swift in Sources */,
+				D0EE94C4214CA3FC003C9F94 /* SCNNodeHelpers.swift in Sources */,
+				D0EE94C3214CA3FC003C9F94 /* RWLabel.swift in Sources */,
+				D0EE948F214C6A61003C9F94 /* AppDelegate.swift in Sources */,
+				D0EE94C2214CA3FC003C9F94 /* FloatingPointExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2336B62B214387C9001D5628 /* Main.storyboard */ = {
+		D0EE9494214C6A61003C9F94 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2336B62C214387C9001D5628 /* Base */,
+				D0EE9495214C6A61003C9F94 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		2336B630214387CA001D5628 /* LaunchScreen.storyboard */ = {
+		D0EE9499214C6A63003C9F94 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2336B631214387CA001D5628 /* Base */,
+				D0EE949A214C6A63003C9F94 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -190,7 +190,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2336B634214387CA001D5628 /* Debug */ = {
+		D0EE949D214C6A63003C9F94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -250,7 +250,7 @@
 			};
 			name = Debug;
 		};
-		2336B635214387CA001D5628 /* Release */ = {
+		D0EE949E214C6A63003C9F94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -304,36 +304,36 @@
 			};
 			name = Release;
 		};
-		2336B637214387CA001D5628 /* Debug */ = {
+		D0EE94A0214C6A63003C9F94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H2AXF5CJ2L;
-				INFOPLIST_FILE = ARPokerDice/Info.plist;
+				INFOPLIST_FILE = Portal_V/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "conandi.ARPokerDice-V";
+				PRODUCT_BUNDLE_IDENTIFIER = "DIRECTV.Portal-V";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		2336B638214387CA001D5628 /* Release */ = {
+		D0EE94A1214C6A63003C9F94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H2AXF5CJ2L;
-				INFOPLIST_FILE = ARPokerDice/Info.plist;
+				INFOPLIST_FILE = Portal_V/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "conandi.ARPokerDice-V";
+				PRODUCT_BUNDLE_IDENTIFIER = "DIRECTV.Portal-V";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,25 +343,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2336B61D214387C9001D5628 /* Build configuration list for PBXProject "ARPokerDice" */ = {
+		D0EE9486214C6A61003C9F94 /* Build configuration list for PBXProject "Portal_V" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2336B634214387CA001D5628 /* Debug */,
-				2336B635214387CA001D5628 /* Release */,
+				D0EE949D214C6A63003C9F94 /* Debug */,
+				D0EE949E214C6A63003C9F94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2336B636214387CA001D5628 /* Build configuration list for PBXNativeTarget "ARPokerDice" */ = {
+		D0EE949F214C6A63003C9F94 /* Build configuration list for PBXNativeTarget "Portal_V" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2336B637214387CA001D5628 /* Debug */,
-				2336B638214387CA001D5628 /* Release */,
+				D0EE94A0214C6A63003C9F94 /* Debug */,
+				D0EE94A1214C6A63003C9F94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2336B61A214387C9001D5628 /* Project object */;
+	rootObject = D0EE9483214C6A61003C9F94 /* Project object */;
 }
