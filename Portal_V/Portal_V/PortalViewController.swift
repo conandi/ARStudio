@@ -17,6 +17,8 @@ class PortalViewController: UIViewController {
     @IBOutlet weak var sessionStateLabel: UILabel!
     @IBOutlet weak var crosshair: UIView!
     var debugPlanes: [SCNNode] = []
+    var portalNode: SCNNode? = nil
+    var isPortalPlaced = false
     var viewCenter: CGPoint {
         let viewBounds = view.bounds
         return CGPoint(x: viewBounds.width/2.0, y: viewBounds.height/2.0)
@@ -62,6 +64,8 @@ class PortalViewController: UIViewController {
     
     func removeAllNodes() {
         removeDebugPlane()
+        self.portalNode?.removeFromParentNode()
+        self.isPortalPlaced = false
     }
     
     func removeDebugPlane() {
@@ -82,26 +86,60 @@ class PortalViewController: UIViewController {
         #endif
         sceneView.delegate = self
     }
+    
+    func makePoral() -> SCNNode {
+        let portal = SCNNode()
+        let box = SCNBox (width: 1.0, height: 1.0, length: 1.0, chamferRadius: 0)
+        let boxNode = SCNNode(geometry: box)
+        portal.addChildNode(boxNode)
+        return portal
+    }
 }
 
 extension PortalViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async {
-            if let planeAnchor = anchor as? ARPlaneAnchor {
+            if let planeAnchor = anchor as? ARPlaneAnchor, !self.isPortalPlaced {
                 #if DEBUG
-                let debugPlaneNode = createPlaneNode(center: planeAnchor.center, extent: planeAnchor.extent)
-                node.addChildNode(debugPlaneNode)
-                self.debugPlanes.append(debugPlaneNode)
+                    let debugPlaneNode = createPlaneNode(center: planeAnchor.center, extent: planeAnchor.extent)
+                    node.addChildNode(debugPlaneNode)
+                    self.debugPlanes.append(debugPlaneNode)
                 #endif
-                self.messageLabel?.text = "Tap on the detected horizontal plane to place the portal"
+                self.messageLabel.alpha = 1.0
+                self.messageLabel.text = """
+                Tap on the detected \
+                horizontal plane to place the portal
+                """
+            } else if !self.isPortalPlaced {
+                self.portalNode = self.makePoral()
+                if let protal = self.portalNode {
+                    node.addChildNode(protal)
+                    self.isPortalPlaced = true
+                    self.removeDebugPlane()
+                    self.sceneView?.debugOptions = []
+                    DispatchQueue.main.async {
+                        self.messageLabel.text = ""
+                        self.messageLabel.alpha = 0.0
+                    }
+                }
             }
         }
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         DispatchQueue.main.async {
-            if let planeAnchor = anchor as? ARPlaneAnchor, node.childNodes.count > 0 {
+            if let planeAnchor = anchor as? ARPlaneAnchor, node.childNodes.count > 0, !self.isPortalPlaced {
                 updatePlaneNode(node.childNodes[0], center: planeAnchor.center, extent: planeAnchor.extent)
+            }
+        }
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        DispatchQueue.main.async {
+            if let _ = self.sceneView?.hitTest(self.viewCenter, types: [.existingPlaneUsingExtent]).first {
+                self.crosshair.backgroundColor = .green
+            } else {
+                self.crosshair.backgroundColor = .lightGray
             }
         }
     }
