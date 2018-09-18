@@ -16,6 +16,10 @@ class PortalViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var sessionStateLabel: UILabel!
     var debugPlanes: [SCNNode] = []
+    var viewCenter: CGPoint {
+        let viewBounds = view.bounds
+        return CGPoint(x: viewBounds.width/2.0, y: viewBounds.height/2.0)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,14 @@ class PortalViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
+    }
+    
+    // MARK: - Actions
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let hit = sceneView?.hitTest(viewCenter, types: [.existingPlaneUsingExtent]).first {
+            sceneView?.session.add(anchor: ARAnchor.init(transform: hit.worldTransform))
+        }
     }
     
     // MARK: -Helper methods
@@ -62,7 +74,7 @@ class PortalViewController: UIViewController {
         let configuration = ARWorldTrackingConfiguration.init()
         configuration.planeDetection = .horizontal
         configuration.isLightEstimationEnabled = true
-        sceneView?.session.run(configuration)
+        sceneView?.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
         #if DEBUG
             sceneView?.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
@@ -78,6 +90,7 @@ extension PortalViewController: ARSCNViewDelegate {
                 #if DEBUG
                 let debugPlaneNode = createPlaneNode(center: planeAnchor.center, extent: planeAnchor.extent)
                 node.addChildNode(debugPlaneNode)
+                self.debugPlanes.append(debugPlaneNode)
                 #endif
                 self.messageLabel?.text = "Tap on the detected horizontal plane to place the portal"
             }
