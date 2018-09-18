@@ -43,6 +43,14 @@
                                 <color key="textColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu9-oP-jzm">
+                                <rect key="frame" x="182.5" y="328" width="10" height="10"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="0K0-D4-kOY"/>
+                                    <constraint firstAttribute="width" constant="10" id="x6O-RJ-jC6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -53,16 +61,19 @@
                             <constraint firstAttribute="bottomMargin" secondItem="vdQ-4T-EAU" secondAttribute="bottom" constant="518" id="MIb-by-vBs"/>
                             <constraint firstItem="GcC-aJ-QmH" firstAttribute="trailing" secondItem="vdQ-4T-EAU" secondAttribute="trailing" constant="38" id="SK1-Jj-tdZ"/>
                             <constraint firstItem="xDr-PS-H6F" firstAttribute="top" secondItem="vdQ-4T-EAU" secondAttribute="bottom" constant="436" id="bZT-CH-PXA"/>
+                            <constraint firstItem="uu9-oP-jzm" firstAttribute="centerY" secondItem="iVu-sa-csh" secondAttribute="centerY" id="dDT-lu-1yN"/>
                             <constraint firstItem="vdQ-4T-EAU" firstAttribute="top" secondItem="GcC-aJ-QmH" secondAttribute="top" constant="20" id="dRX-ou-PRH"/>
                             <constraint firstItem="vdQ-4T-EAU" firstAttribute="leading" secondItem="GcC-aJ-QmH" secondAttribute="leading" constant="38" id="mus-w9-6AD"/>
                             <constraint firstItem="xDr-PS-H6F" firstAttribute="centerX" secondItem="iVu-sa-csh" secondAttribute="centerX" id="qjT-6c-eWJ"/>
                             <constraint firstItem="GcC-aJ-QmH" firstAttribute="bottom" secondItem="xDr-PS-H6F" secondAttribute="bottom" constant="20" id="wVP-1X-kQ4"/>
+                            <constraint firstItem="uu9-oP-jzm" firstAttribute="centerX" secondItem="iVu-sa-csh" secondAttribute="centerX" id="wky-1Q-sWr"/>
                             <constraint firstItem="ZAv-bt-DCm" firstAttribute="leading" secondItem="GcC-aJ-QmH" secondAttribute="leading" id="xAM-6G-mMh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GcC-aJ-QmH"/>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="crosshair" destination="uu9-oP-jzm" id="Ugm-u2-3VY"/>
                         <outlet property="messageLabel" destination="vdQ-4T-EAU" id="5l5-6g-acA"/>
                         <outlet property="sceneView" destination="ZAv-bt-DCm" id="l9z-gZ-tw3"/>
                         <outlet property="sessionStateLabel" destination="xDr-PS-H6F" id="xCU-Wp-naj"/>

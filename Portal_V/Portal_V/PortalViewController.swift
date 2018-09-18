@@ -15,6 +15,7 @@ class PortalViewController: UIViewController {
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var sessionStateLabel: UILabel!
+    @IBOutlet weak var crosshair: UIView!
     var debugPlanes: [SCNNode] = []
     var viewCenter: CGPoint {
         let viewBounds = view.bounds
