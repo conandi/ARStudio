@@ -9,6 +9,17 @@
 import Foundation
 import SceneKit
 
+let SRRFACE_LENGTH: CGFloat = 3.0
+let SURFACE_HEIGHT: CGFloat = 0.2
+let SURFACE_WIDTH: CGFloat = 3.0
+
+let SCALEX: Float = 2.0
+let SCALEY: Float = 2.0
+
+let WALL_WIDTH: CGFloat = 0.2
+let WALL_HEIGHT: CGFloat = 3.0
+let WALL_LENGTH: CGFloat = 3.0
+
 func createPlaneNode(center: vector_float3, extent:vector_float3) -> SCNNode {
     let plane = SCNPlane(width: CGFloat(extent.x), height: CGFloat(extent.z))
     let planeMaterial = SCNMaterial()
@@ -25,4 +36,28 @@ func updatePlaneNode(_ node: SCNNode, center: vector_float3, extent: vector_floa
     geometry?.width = CGFloat(extent.x)
     geometry?.height = CGFloat(extent.z)
     node.position = SCNVector3Make(center.x, 0, center.z)
+}
+
+func repeatTexture(geometry: SCNGeometry, scaleX: Float, scaleY: Float) {
+    
+    geometry.firstMaterial?.diffuse.wrapS = SCNWrapMode.repeat
+    geometry.firstMaterial?.selfIllumination.wrapS = SCNWrapMode.repeat
+    geometry.firstMaterial?.normal.wrapS = SCNWrapMode.repeat
+    geometry.firstMaterial?.specular.wrapS = SCNWrapMode.repeat
+    geometry.firstMaterial?.emission.wrapS = SCNWrapMode.repeat
+    geometry.firstMaterial?.roughness.wrapS = SCNWrapMode.repeat
+
+    geometry.firstMaterial?.diffuse.wrapT = SCNWrapMode.repeat
+    geometry.firstMaterial?.selfIllumination.wrapT = SCNWrapMode.repeat
+    geometry.firstMaterial?.normal.wrapT = SCNWrapMode.repeat
+    geometry.firstMaterial?.specular.wrapT = SCNWrapMode.repeat
+    geometry.firstMaterial?.emission.wrapT = SCNWrapMode.repeat
+    geometry.firstMaterial?.roughness.wrapT = SCNWrapMode.repeat
+
+    geometry.firstMaterial?.diffuse.contentsTransform = SCNMatrix4MakeScale(scaleX, scaleY, 0)
+    geometry.firstMaterial?.selfIllumination.contentsTransform = SCNMatrix4MakeScale(scaleX, scaleY, 0)
+    geometry.firstMaterial?.normal.contentsTransform = SCNMatrix4MakeScale(scaleX, scaleY, 0)
+    geometry.firstMaterial?.specular.contentsTransform = SCNMatrix4MakeScale(scaleX, scaleY, 0)
+    geometry.firstMaterial?.emission.contentsTransform = SCNMatrix4MakeScale(scaleX, scaleY, 0)
+    geometry.firstMaterial?.roughness.contentsTransform = SCNMatrix4MakeScale(scaleX, scaleY, 0)
 }

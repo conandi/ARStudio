@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230E162521522E3500EE04F0 /* Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 230E162421522E3500EE04F0 /* Assets.scnassets */; };
 		D0EE948F214C6A61003C9F94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE948E214C6A61003C9F94 /* AppDelegate.swift */; };
 		D0EE9491214C6A61003C9F94 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D0EE9490214C6A61003C9F94 /* art.scnassets */; };
 		D0EE9493214C6A61003C9F94 /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE9492214C6A61003C9F94 /* PortalViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230E162421522E3500EE04F0 /* Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Assets.scnassets; sourceTree = "<group>"; };
 		D0EE948B214C6A61003C9F94 /* Portal_V.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portal_V.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EE948E214C6A61003C9F94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0EE9490214C6A61003C9F94 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				D0EE9494214C6A61003C9F94 /* Main.storyboard */,
 				D0EE9490214C6A61003C9F94 /* art.scnassets */,
 				D0EE9497214C6A63003C9F94 /* Assets.xcassets */,
+				230E162421522E3500EE04F0 /* Assets.scnassets */,
 				D0EE9499214C6A63003C9F94 /* LaunchScreen.storyboard */,
 				D0EE949C214C6A63003C9F94 /* Info.plist */,
 			);
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0EE9491214C6A61003C9F94 /* art.scnassets in Resources */,
+				230E162521522E3500EE04F0 /* Assets.scnassets in Resources */,
 				D0EE949B214C6A63003C9F94 /* LaunchScreen.storyboard in Resources */,
 				D0EE9498214C6A63003C9F94 /* Assets.xcassets in Resources */,
 				D0EE9496214C6A61003C9F94 /* Main.storyboard in Resources */,
