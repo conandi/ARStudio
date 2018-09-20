@@ -9,7 +9,7 @@
 import Foundation
 import SceneKit
 
-let SRRFACE_LENGTH: CGFloat = 3.0
+let SURFACE_LENGTH: CGFloat = 3.0
 let SURFACE_HEIGHT: CGFloat = 0.2
 let SURFACE_WIDTH: CGFloat = 3.0
 
@@ -60,4 +60,13 @@ func repeatTexture(geometry: SCNGeometry, scaleX: Float, scaleY: Float) {
     geometry.firstMaterial?.specular.contentsTransform = SCNMatrix4MakeScale(scaleX, scaleY, 0)
     geometry.firstMaterial?.emission.contentsTransform = SCNMatrix4MakeScale(scaleX, scaleY, 0)
     geometry.firstMaterial?.roughness.contentsTransform = SCNMatrix4MakeScale(scaleX, scaleY, 0)
+}
+
+func makeOuterSurfaceNode(width: CGFloat, height: CGFloat, length: CGFloat) -> SCNNode {
+    let outerSurface = SCNBox(width: SURFACE_WIDTH, height: SURFACE_HEIGHT, length: SURFACE_LENGTH, chamferRadius: 0)
+    outerSurface.firstMaterial?.diffuse.contents = UIColor.white
+    outerSurface.firstMaterial?.transparency = 0.000001
+    let outerSurfaceNode = SCNNode(geometry: outerSurface)
+    outerSurfaceNode.renderingOrder = 10
+    return outerSurfaceNode
 }
