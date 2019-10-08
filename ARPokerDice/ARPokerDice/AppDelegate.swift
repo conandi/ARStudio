@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ARPokerDice
 //
-//  Created by conandi on 9/7/18        .
+//  Created by conandi on 9/7/18.
 //  Copyright © 2018 conandi. All rights reserved.
 //
 
